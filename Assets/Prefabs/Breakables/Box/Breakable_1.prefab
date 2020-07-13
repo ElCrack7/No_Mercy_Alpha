@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9143526378248904880}
   - component: {fileID: 7032339044266326068}
   - component: {fileID: -1736556830652905614}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Breakable_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
