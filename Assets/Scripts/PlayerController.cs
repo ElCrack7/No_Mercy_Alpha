@@ -25,6 +25,14 @@ public class PlayerController : MonoBehaviour
 
     public SpriteRenderer bodySR;
 
+    private float activeMoveSpeed;
+
+    public float dashSpeed = 8f, dashLength = .5f, dashCooldown = 1f, dashInvinvibility = .5f;
+    [HideInInspector]
+    private float dashCoolCounter;
+    public float dashCounter;
+
+
     private void Awake()
     {
         instance = this;
@@ -34,6 +42,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         theCam = Camera.main;
+
+        activeMoveSpeed = moveSpeed; 
     }
 
     // Update is called once per frame
@@ -47,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         //transform.position += new Vector3(moveInput.x * Time.deltaTime * moveSpeed, moveInput.y * Time.deltaTime  * moveSpeed, 0f);
 
-        rb.velocity = moveInput * moveSpeed;
+        rb.velocity = moveInput * activeMoveSpeed;
 
 
         Vector3 mousePos = Input.mousePosition;
@@ -87,7 +97,31 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (dashCoolCounter <= 0 && dashCoolCounter <= 0)
+            { 
+            activeMoveSpeed = dashSpeed;
+            dashCounter = dashLength;
 
+                anim.SetTrigger("dash");
+
+                PlayerHealthController.instance.MakeInvincible(dashInvinvibility);
+        }
+        }
+        if(dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if(dashCounter <=0)
+            {
+                activeMoveSpeed = moveSpeed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+        if(dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
 
 
 
