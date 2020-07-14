@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     private float dashCoolCounter;
     public float dashCounter;
-
+    [HideInInspector]
+    public bool canMove = true;
 
     private void Awake()
     {
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(canMove)
+        { 
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
@@ -135,6 +138,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            anim.SetBool("isMoving", false);
+        }
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
             anim.SetBool("isMoving", false);
         }
 
