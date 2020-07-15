@@ -21874,6 +21874,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b363e5aab4305a74ca859a939a448221, type: 3}
+--- !u!1001 &2415121434366668433
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6889429580908269960, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy - Glut
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076006794867161094, guid: 9cbe57522989bf94c8e510d428d4388a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9cbe57522989bf94c8e510d428d4388a, type: 3}
 --- !u!1001 &4576965173110163322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21886,6 +21955,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4576965173896025372, guid: 359a00505a735af45bfd86f0430ef139,
+        type: 3}
+      propertyPath: newGameScene
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576965173896025372, guid: 359a00505a735af45bfd86f0430ef139,
+        type: 3}
+      propertyPath: mainMenuScene
+      value: TitleMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576965173896025372, guid: 359a00505a735af45bfd86f0430ef139,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 2060064627}
     - target: {fileID: 4576965173896025375, guid: 359a00505a735af45bfd86f0430ef139,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21991,21 +22075,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4576965173896025372, guid: 359a00505a735af45bfd86f0430ef139,
-        type: 3}
-      propertyPath: newGameScene
-      value: Test
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576965173896025372, guid: 359a00505a735af45bfd86f0430ef139,
-        type: 3}
-      propertyPath: mainMenuScene
-      value: TitleMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576965173896025372, guid: 359a00505a735af45bfd86f0430ef139,
-        type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 2060064627}
     - target: {fileID: 4576965173627097113, guid: 359a00505a735af45bfd86f0430ef139,
         type: 3}
       propertyPath: m_IsActive

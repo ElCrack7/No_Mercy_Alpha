@@ -7,8 +7,18 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed;
 
+
+    public bool shouldChasePlayer;
     public float rangeToChasePlayer;
     private Vector3 moveDirection;
+
+    public bool shouldRunAway;
+    public float runawayRange;
+
+    public bool shouldWander;
+    public float wanderLenght, pauseLenght;
+    private float wanderCounter, pauseCounter;
+    private Vector3 wanderDirection;
 
     public Animator anim;
 
@@ -30,23 +40,65 @@ public class EnemyController : MonoBehaviour
     public float shootRange;
     void Start()
     {
-        
+        if(shouldWander)
+        {
+            pauseCounter = Random.Range(pauseLenght * .75f, pauseLenght * 1.25f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if( theBody.isVisible && PlayerController.instance.gameObject.activeInHierarchy)
-        { 
-
-
-          if(Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToChasePlayer)
-        {
-            moveDirection = PlayerController.instance.transform.position - transform.position;
-        }else
         {
             moveDirection = Vector3.zero;
-        }
+
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToChasePlayer && shouldChasePlayer)
+        {
+
+            moveDirection = PlayerController.instance.transform.position - transform.position;
+            }
+            else
+            {
+                if(shouldWander)
+                {
+                    if(wanderCounter > 0)
+                    {
+                        wanderCounter -= Time.deltaTime;
+                        //ruch wroga(gluta)
+                        moveDirection = wanderDirection;
+
+                        if(wanderCounter <=0)
+                        {
+                            pauseCounter = Random.Range(pauseLenght * .75f, pauseLenght * 1.25f);
+                        }
+                    }
+
+                    if(pauseCounter > 0)
+                    {
+                        pauseCounter -= Time.deltaTime;
+
+                        if(pauseCounter <= 0)
+                        {
+                            wanderCounter = Random.Range(wanderLenght * .75f, wanderLenght * 1.25f);
+
+                            wanderDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+                        }
+                    }
+                }
+            }
+
+            if(shouldRunAway && Vector3.Distance(transform.position, PlayerController.instance.transform.position) < runawayRange)
+            {
+                moveDirection = transform.position - PlayerController.instance.transform.position;
+            }
+
+           
+
+        //    else
+        //{
+        //    moveDirection = Vector3.zero;
+        //}
     
 
         moveDirection.Normalize();
