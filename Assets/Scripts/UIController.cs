@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public static UIController instance;
     public Slider healtSlider;
     public Text healthText;
+    public Text coinText;
 
     public Image fadeScreen;
     public float fadeSpeed;

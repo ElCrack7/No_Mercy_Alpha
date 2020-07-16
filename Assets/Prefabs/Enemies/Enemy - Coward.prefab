@@ -165,6 +165,9 @@ MonoBehaviour:
   rangeToChasePlayer: 7
   shouldRunAway: 1
   runawayRange: 7
+  shouldWander: 0
+  wanderLenght: 0
+  pauseLenght: 0
   anim: {fileID: 5499658335663093476}
   health: 150
   deathSplatters:
@@ -173,6 +176,10 @@ MonoBehaviour:
   - {fileID: 8810536343171455298, guid: 805b7c8f0242b034ea76d7f90fa34ec2, type: 3}
   hitEffect: {fileID: 5190357101457625097, guid: c1a23a5ac844b5343bf1e2e0b42d1b21,
     type: 3}
+  shouldDropItem: 1
+  itemsToDrop:
+  - {fileID: 5063894130185822891, guid: d9157b3202c642e4393c9290e8b8a9d4, type: 3}
+  itemDropPercent: 30
   shouldShoot: 1
   bullet: {fileID: 5382423521981758635, guid: 60ba929f5d4e2454fa2233b4f54cb562, type: 3}
   firePoint: {fileID: 9093501803194676481}

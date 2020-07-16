@@ -108,6 +108,8 @@ MonoBehaviour:
   itemsToDrop:
   - {fileID: 4474827412111591388, guid: 31a894dbca4bb8142b11fbe4317fdd50, type: 3}
   - {fileID: 4474827412111591388, guid: e35e3f43824ed9546883ed60b764e3d2, type: 3}
+  - {fileID: 5063894130185822891, guid: d9157b3202c642e4393c9290e8b8a9d4, type: 3}
+  - {fileID: 5063894130185822891, guid: d9157b3202c642e4393c9290e8b8a9d4, type: 3}
   itemDropPercent: 20
 --- !u!61 &2308401073427403690
 BoxCollider2D:

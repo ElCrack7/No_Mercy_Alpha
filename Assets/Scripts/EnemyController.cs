@@ -28,6 +28,10 @@ public class EnemyController : MonoBehaviour
 
     public GameObject hitEffect;
 
+    public bool shouldDropItem;
+    public GameObject[] itemsToDrop;
+    public float itemDropPercent;
+
     public bool shouldShoot;
     public GameObject bullet;
 
@@ -153,8 +157,19 @@ public class EnemyController : MonoBehaviour
             int rotation = Random.Range(0, 4);
 
             Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0f, 0f, rotation * 90f ));
+            if (shouldDropItem)
+            {
+                float dropChance = Random.Range(0f, 100f);
 
-            
+                if (dropChance < itemDropPercent)
+                {
+                    int randomItem = Random.Range(0, itemsToDrop.Length);
+
+                    Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+                }
+            }
+
+
         }
     }
 }

@@ -11,6 +11,8 @@ public class CameraController : MonoBehaviour
 
     public Transform target;
 
+    public bool isBossRoom;
+
     private void Awake()
     {
         instance = this;
@@ -18,7 +20,10 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(isBossRoom)
+        {
+            target = PlayerController.instance.transform;
+        }
     }
 
     // Update is called once per frame
