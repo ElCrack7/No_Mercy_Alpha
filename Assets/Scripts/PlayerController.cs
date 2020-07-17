@@ -76,33 +76,33 @@ public class PlayerController : MonoBehaviour
             transform.localScale = Vector3.one;
             gunArm.localScale = Vector3.one;
         }
-
+        //rotacja broni
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         gunArm.rotation = Quaternion.Euler(0, 0, angle);
 
 
-        if(Input.GetMouseButtonDown(0))
-        {
-            Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
-            shotCounter = timeBetweenShots;
-            AudioManager.instance.PlaySFX(12);
-        }
-
-        if(Input.GetMouseButtonUp(0))
-        {
-            shotCounter = shotCounter - Time.deltaTime;
-
-            if(shotCounter <= 0)
+            if (Input.GetMouseButtonDown(0))
             {
                 Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
-                AudioManager.instance.PlaySFX(12);
-
                 shotCounter = timeBetweenShots;
+                AudioManager.instance.PlaySFX(12);
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonUp(0))
+            {
+                shotCounter = shotCounter - Time.deltaTime;
+
+                if (shotCounter <= 0)
+                {
+                    Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
+                    AudioManager.instance.PlaySFX(12);
+
+                    shotCounter = timeBetweenShots;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
         {
             if (dashCoolCounter <= 0 && dashCoolCounter <= 0)
             { 
